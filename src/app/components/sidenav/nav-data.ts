@@ -1,29 +1,45 @@
-export const navbarData = [
+import { INavbarData } from "./helpter"
+
+export const navbarData: INavbarData[] =  [
     { 
         routerLink:'dashboard',
         icon: 'fal fa-home',
-        label:'Dashboard'
-    },
-
-    { 
-        routerLink:'statistics',
-        icon: 'fal fa-chart-bar',
-        label:'Statistics'
+        label:'Tableau de Bord'
+        // afficher des données et des statistiques globales sur les candidatures et les concours.y
     },
     { 
-        routerLink:'coupens',
-        icon: 'fal fa-tags',
-        label:'Coupens'
-    },
-    { 
-        routerLink:'pages',
-        icon: 'fal fa-file',
-        label:'Pages'
-    },
-    { 
-        routerLink:'media',
+        routerLink:'gestionscandidatures',
         icon: 'fal fa-camera',
-        label:'Media'
+        label:'Gérer Candidatures '
+    },
+    { 
+        routerLink:'mesCandidatures',
+        icon: 'fal fa-tags',
+        label:'Mes Candidatures',
+        items : [ {
+            routerLink:'mesCandidatures/list1',
+            label:'list 1 candidatures'
+            },
+
+            {
+            routerLink:'mesCandidatures/list1',
+            label:'list 2 candidatures'
+            },
+            {
+            routerLink:'mesCandidatures/list1',
+            label:'list 3 candidatures'
+            }
+                ]
+    },     
+            { 
+        routerLink:'statistiques',
+        icon: 'fal fa-chart-bar',
+        label:'Statistiques des Candidatures',
+    },
+    { 
+        routerLink:'concours',
+        icon: 'fal fa-file',
+        label:'Concours',
     },
     { 
         routerLink:'settings',

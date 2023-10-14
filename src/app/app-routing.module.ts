@@ -10,10 +10,10 @@ import { SettingsComponent } from './components/settings/settings.component';
 const routes: Routes = [
   {path : '', redirectTo : 'dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'statistics', component:StatisticsComponent},
-  {path: 'coupens', component: CoupensComponent},
-  {path: 'pages', component: PagesComponent},
-  {path: 'media', component: MediaComponent},
+  {path: 'gestionscandidatures', component:StatisticsComponent},
+  {path: 'mesCandidatures', component: CoupensComponent},
+  {path: 'statistiques', component: PagesComponent},
+  {path: 'concours', component: MediaComponent},
   {path: 'settings', component: SettingsComponent}
 
 ];

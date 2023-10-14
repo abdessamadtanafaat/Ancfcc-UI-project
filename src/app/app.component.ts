@@ -16,8 +16,9 @@ export class AppComponent {
   
   title = 'Ancfcc-Front-end-project';
   
+  // les valeurs initiales
   isSideNavCollapsed = false; 
-  screenWidth = 0;
+  screenWidth = 768;
 
   onToggleSideNav(data: SidenavToggle): void{
     this.screenWidth = data.screenWidth; 

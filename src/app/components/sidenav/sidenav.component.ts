@@ -37,8 +37,8 @@ interface SidenavToggle{
 export class SidenavComponent implements OnInit {
 
   @Output() onTogggleSideNav: EventEmitter<SidenavToggle> = new EventEmitter(); 
-  collapsed = false; 
-  screenWidth = 0; 
+  collapsed = true; 
+  screenWidth = 768; 
   navData = navbarData; 
   
   ngOnInit(): void {

@@ -13,6 +13,7 @@ import { MediaComponent } from './components/media/media.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { CoupensComponent } from './components/coupens/coupens.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     PagesComponent,
     CoupensComponent,
     StatisticsComponent,
+    SublevelMenuComponent,
   ],
   imports: [
     BrowserModule,
