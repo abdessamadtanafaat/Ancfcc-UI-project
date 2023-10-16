@@ -28,9 +28,16 @@ import { INavbarData } from './helpter';
           >
            <i class="sublevel-link-icon fa-fa-circle"></i>
            <span class = "sublevel-link-text" *ngIf="collapsed"> {{item.label}}</span>
-
-
         </a>
+         <div *ngIf = "item.items && item.items.length > 0">
+          <app-sublevel-menu
+             [collapsed]="collapsed"
+             [multiple]="multiple"
+             [expanded]= "item.expanded"             
+          
+          
+          ></app-sublevel-menu>
+         </div>
         </li> 
 
   </ul>
@@ -48,7 +55,7 @@ export class SublevelMenuComponent  implements OnInit{
   }
   @Input() collapsed = false; 
   @Input() animating: boolean | undefined; 
-  @Input() selected: boolean | undefined;
+  @Input() expanded: boolean | undefined;
   @Input() multiple: boolean = false;
 
   constructor() {}
