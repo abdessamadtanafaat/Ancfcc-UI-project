@@ -50,11 +50,21 @@ export class SidenavComponent implements OnInit {
 
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
+    if (this.collapsed){
+      for(let modelItem of this.navData){
+        modelItem.expanded = false;
+      }
+    }
     this.onTogggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
   closeSidenav(): void {
     this.collapsed = false; 
+    if (this.collapsed){ //if the item is expanded , gonna be collapsed automatically . 
+      for(let modelItem of this.navData){
+        modelItem.expanded = false;
+      }
+    }
     this.onTogggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
   handleClick(item: INavbarData): void{
