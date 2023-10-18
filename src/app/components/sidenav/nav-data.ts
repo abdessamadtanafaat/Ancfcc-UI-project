@@ -1,4 +1,4 @@
-import { INavbarData } from "./helpter"
+import { INavbarData } from "./helper"
 
 export const navbarData: INavbarData[] =  [
     { 
