@@ -6,9 +6,12 @@ import { CoupensComponent } from './components/coupens/coupens.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { MediaComponent } from './components/media/media.component';
 import { SettingsComponent } from './components/settings/settings.component';
-
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
-  {path : '', redirectTo : 'dashboard', pathMatch: 'full'},
+  {path : '', redirectTo : 'login', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'gestionscandidatures', component:StatisticsComponent},
   {path: 'mesCandidatures', component: CoupensComponent},

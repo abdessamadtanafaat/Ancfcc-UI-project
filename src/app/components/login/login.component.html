@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+
+    <title>Login & Registration</title>    
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p> ANCFCC </p>
+            </div>
+            <div class="nav-button">
+                <button routerLink="/login" class="btn white-btn" id="loginBtn" onclick="login()">Se Connecter</button>
+                <button routerLink="/register" class="btn" id="registrationBtn" onclick="register()">S'inscrire</button>
+            </div>
+        </nav>
+      <!-------------------Form box-------------------------->
+      <div class="form-box">
+                <!-- --------login from------- -->
+                <div class="register-container" id="login">
+                  <div class="top">
+                    <span>Vous n'avez pas de compte ?<a routerLink="/register" onclick="login()">S'inscrire</a></span>
+                    <header>Se Connecter</header>
+                  </div>
+            
+                <div class="two-forms">
+            
+                  <div class="input-box">
+                    <input type="email" class="input-field" placeholder="Adresse e-mail">
+                    <i class="fa fa-envelope"></i>
+                  </div>
+            
+                  <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Mot de Passe">
+                    <i class="fa fa-unlock-alt"></i>
+                  </div>
+            
+                  <div class="input-box">
+                    <input type="submit" class="submit" value="Se Connecter">
+                  </div>
+                  
+                  <div class="two-col">
+                    <div class="one">
+                      <input type="checkbox" id="register-check">
+                      <label for="login-check"> Souviens-toi de moi </label>
+                    </div>
+                    <div class="two">
+                      <label><a href="#">Mot de passe oublié?</a></label>
+                    </div>
+                  </div>
+        </div>
+      </div>
+    </div>  

@@ -14,6 +14,8 @@ import { PagesComponent } from './components/pages/pages.component';
 import { CoupensComponent } from './components/coupens/coupens.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.compon
     CoupensComponent,
     StatisticsComponent,
     SublevelMenuComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

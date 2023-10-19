@@ -5,14 +5,17 @@
     margin : 0; 
     padding: 0; 
     box-sizing: border-box;        
-}
-
-body{
-
-    position: relative; 
     font-family: 'Roboto',sans-serif;
 }
 
+body{
+    position: relative; 
+    background: url("/assets/siege-ANCFCC-MAP-scaled.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed ;
+    overflow: hidden; /* Hide any content that overflows the container */
+}
 .card{
     display: flex;
     flex-direction: column;
