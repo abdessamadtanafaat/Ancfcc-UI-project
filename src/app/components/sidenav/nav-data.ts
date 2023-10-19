@@ -3,18 +3,18 @@ import { INavbarData } from "./helper"
 export const navbarData: INavbarData[] =  [
     { 
         routerLink:'dashboard',
-        icon: 'fal fa-home',
+        icon: 'fa fa-tachometer',
         label:'Tableau de Bord'
         // afficher des données et des statistiques globales sur les candidatures et les concours.y
     },
     { 
         routerLink:'gestionscandidatures',
-        icon: 'fal fa-camera',
+        icon: 'fa fa-cogs',
         label:'Gérer Candidatures '
     },
     { 
         routerLink:'mesCandidatures',
-        icon: 'fal fa-tags',
+        icon: 'fa fa-folder',
         label:'Mes Candidatures',
         items : [ {
             routerLink:'mesCandidatures/acceptees',
