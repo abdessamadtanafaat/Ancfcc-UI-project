@@ -17,24 +17,24 @@ export const navbarData: INavbarData[] =  [
         icon: 'fal fa-tags',
         label:'Mes Candidatures',
         items : [ {
-            routerLink:'mesCandidatures/list1',
-            label:'list 1 candidatures'
+            routerLink:'mesCandidatures/acceptees',
+            label:'Acceptées'
             },
 
             {
-            routerLink:'mesCandidatures/list1',
-            label:'list 2 candidatures'
+            routerLink:'mesCandidatures/refusees',
+            label:'Refusée'
             },
             {
-            routerLink:'mesCandidatures/list1',
-            label:'list 3 candidatures'
+            routerLink:'mesCandidatures/revision',
+            label:'A examiner'
             }
                 ]
     },     
-            { 
+    { 
         routerLink:'statistiques',
         icon: 'fal fa-chart-bar',
-        label:'Statistiques des Candidatures',
+        label:'Statistiques',
     },
     { 
         routerLink:'concours',

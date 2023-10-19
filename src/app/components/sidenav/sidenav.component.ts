@@ -2,7 +2,6 @@ import { Component,Output,EventEmitter,OnInit  } from '@angular/core';
 import { navbarData } from './nav-data';
 import { animate,style, transition, trigger  } from '@angular/animations';
 import { INavbarData } from './helper';
-import { isNgTemplate } from '@angular/compiler';
 
 
 interface SidenavToggle{
