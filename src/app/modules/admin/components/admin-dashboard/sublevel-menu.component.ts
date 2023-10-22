@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { INavbarData } from './helper';
+import { INavbarData } from '../sidenav/helper';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 //kenti dayer f ngIf expanded mais khass dir data.expanded . 
 @Component({
@@ -44,7 +44,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         </li> 
   </ul>
   `,
-    styleUrls: ['./sidenav.component.scss'],
+    styleUrls: ['./admin-dashboard.component.scss'],
     animations:[
       trigger('submenu',[
          state('hidden',style({

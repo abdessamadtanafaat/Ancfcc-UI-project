@@ -5,32 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatListModule} from '@angular/material/list'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { BodyComponent } from './components/body/body.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { MediaComponent } from './components/media/media.component';
-import { PagesComponent } from './components/pages/pages.component';
-import { CoupensComponent } from './components/coupens/coupens.component';
-import { StatisticsComponent } from './components/statistics/statistics.component';
-import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.component';
+import { BodyComponent } from './modules/admin/components/body/body.component';
+import { SettingsComponent } from './modules/admin/components/settings/settings.component';
+import { MediaComponent } from './modules/admin/components/media/media.component';
+import { PagesComponent } from './modules/admin/components/pages/pages.component';
+import { CoupensComponent } from './modules/admin/components/coupens/coupens.component';
+import { StatisticsComponent } from './modules/admin/components/statistics/statistics.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-
+import { NotFoundComponent } from './components/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
-    BodyComponent,
-    DashboardComponent,
-    SettingsComponent,
-    MediaComponent,
-    PagesComponent,
-    CoupensComponent,
-    StatisticsComponent,
-    SublevelMenuComponent,
     LoginComponent,
     RegisterComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
+
+  userLoggedin=false; 
   ngOnInit(): void {
   }
 
   login(): void{
-
+    this.userLoggedin = true; 
   }
   register(): void{
-    
+
   }
 
 

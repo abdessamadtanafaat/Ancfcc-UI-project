@@ -23,7 +23,5 @@ export class AppComponent {
   onToggleSideNav(data: SidenavToggle): void{
     this.screenWidth = data.screenWidth; 
     this.isSideNavCollapsed = data.collapsed; 
-
-
   }
 }
