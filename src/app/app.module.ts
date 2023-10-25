@@ -10,7 +10,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+import { authGuard } from './guards/auth.guard';
+import { ServiceService } from './services/service.service';
 
+
+export function tokenGetter(){
+  return localStorage.getItem("token");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +33,15 @@ import {HttpClientModule} from '@angular/common/http';
     MatListModule, 
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: tokenGetter, 
+        allowedDomains: ["localhost:44355"],
+        disallowedRoutes:[]
+      }
+    })
   ],
-  providers: [],
+  providers: [authGuard, ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

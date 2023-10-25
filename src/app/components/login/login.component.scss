@@ -172,3 +172,10 @@ header{
 .two label a:hover{
     text-decoration: underline; 
 }
+.invalid-feedback {
+    color : #ffffff; 
+    border-radius: 4px;
+    padding: 4px; 
+    font-size: 12px;
+    margin-top: 5px; 
+}

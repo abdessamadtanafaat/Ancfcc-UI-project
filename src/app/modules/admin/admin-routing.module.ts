@@ -10,8 +10,10 @@ import { SettingsComponent } from 'src/app/modules/admin/components/settings/set
 import { SidenavComponent } from 'src/app/modules/admin/components/sidenav/sidenav.component';
 
 const routes: Routes = [
-{path: '', component: AdminDashboardComponent,
- children:[
+{
+  path:'',component: AdminDashboardComponent,
+  children:[
+  {path: 'admin', component: AdminDashboardComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'gestionscandidatures', component:StatisticsComponent},
   {path: 'mesCandidatures', component: CoupensComponent},

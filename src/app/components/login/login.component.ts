@@ -21,11 +21,11 @@ export class LoginComponent {
     password: new FormControl(''),
   }); 
   isSubmitted = false; 
+
+
   
   constructor(private fb: FormBuilder, private authService: ServiceService, private router: Router) {}
   
-
-
   ngOnInit(): void {
     this.loginForm = this.fb.group(
       {
@@ -57,28 +57,29 @@ export class LoginComponent {
   onSubmitLogin() {
     console.log(this.loginForm.value, this.loginForm.invalid); 
 
-    if (this.loginForm.invalid) {
-      return;
-    }
-    this.isSubmitted = true ; 
-    
     this.authService.login(this.loginForm.value).subscribe(
       (response: string)=>{
-      const token = response; 
-      console.log('Token',token); 
-      if (token){
-        this.router.navigate(['/admin']);
-      }
 
-    },
-    
-    (error) => {
-      console.error('Login failed:', error);
-    }
+          const token = response; 
+
+          if (token) {
+            localStorage.setItem('token', token);
+            this.router.navigate(['admin']);
+            console.log('Token', token);
+          } else {
+            alert('Authentication failed. Please check your credentials.');
+          }
+        },
+        (err: Error) => {
+          alert('Authentication failed. Please check your credentials.');
+        }
+
     ); 
     
     }
-  
+
+    
+
   login(): void{}
   register(): void{}
 
