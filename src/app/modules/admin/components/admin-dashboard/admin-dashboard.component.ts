@@ -2,6 +2,7 @@ import { Component,Output,EventEmitter,OnInit } from '@angular/core';
 import { navbarData } from './nav-data';
 import { INavbarData } from './helper';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 interface SidenavToggle{
   screenWidth : number; 
@@ -33,9 +34,25 @@ interface SidenavToggle{
 })
 
 
-export class AdminDashboardComponent {
+export class AdminDashboardComponent implements OnInit{
 
-  title = 'Ancfcc-Front-end-project';
+  constructor(private router: Router) {
+    //localStorage.removeItem('token');  //pour claire localstorage hit kaydirha manually kykhlik dkhel admin hit local strage ba9i fih token 
+    
+
+    console.log(localStorage.getItem('token'));
+    
+
+  }
+
+  ngOnInit() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      this.router.navigate(['/login']); // Redirect to the login page if no token is found
+      console.log(token);
+    }
+  }
+  
   
   // les valeurs initiales
   isSideNavCollapsed = false; 

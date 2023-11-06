@@ -3,20 +3,25 @@ import { ServiceService } from '../services/service.service';
 import { Injectable } from '@angular/core';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 
-export class authGuard  implements CanActivate  {
+export class authGuard implements CanActivate  {
 
   constructor(private auth: ServiceService, private router: Router){ }
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot
-    ): boolean {
+  canActivate():boolean
+     {
+      
       if (this.auth.isTokenValid())  {
         return true; 
       }
-      this.router.navigate(['login']);
-      return false; 
-      
-
+      else {
+        this.router.navigate(['login']);
+        return false; 
+      }
+        
     }
+
 }
 

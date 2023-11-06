@@ -8,12 +8,13 @@ import { PagesComponent } from 'src/app/modules/admin/components/pages/pages.com
 import { MediaComponent } from 'src/app/modules/admin/components/media/media.component';
 import { SettingsComponent } from 'src/app/modules/admin/components/settings/settings.component';
 import { SidenavComponent } from 'src/app/modules/admin/components/sidenav/sidenav.component';
+import { authGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
 {
   path:'',component: AdminDashboardComponent,
   children:[
-  {path: 'admin', component: AdminDashboardComponent},
+
   {path: 'dashboard', component: DashboardComponent},
   {path: 'gestionscandidatures', component:StatisticsComponent},
   {path: 'mesCandidatures', component: CoupensComponent},
@@ -29,5 +30,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  
 })
 export class AdminRoutingModule { }

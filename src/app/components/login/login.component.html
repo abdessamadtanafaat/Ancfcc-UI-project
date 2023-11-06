@@ -13,14 +13,14 @@
             </div>
             <div class="nav-button">
                 <button routerLink="/login" class="btn white-btn" id="loginBtn" onclick="login()">Se Connecter</button>
-                <button routerLink="/sidenav" class="btn" id="registrationBtn" onclick="register()">S'inscrire</button>
+                <button routerLink="/register" class="btn" id="registrationBtn" onclick="register()">S'inscrire</button>
             </div>
         </nav>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
             <div class="form-box">
-                <div class="register-container" id="login">
+                <div class="login-container" id="login">
                     <div class="top">
-                        <span>Vous n'avez pas de compte ? <a routerLink="/register" onclick="login()">S'inscrire</a></span>
+                        <span>Vous n'avez pas de compte ? <a routerLink="/register" onclick="register()">S'inscrire</a></span>
                         <header>Se Connecter</header>
                     </div>
                     <div class="two-forms">
