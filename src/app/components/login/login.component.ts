@@ -13,8 +13,6 @@ import { AuthResponseDto, UserForAuthenticationDto } from './user';
 
 export class LoginComponent {
   
-  title : string = 'Login From'; 
-
   loginForm: FormGroup;
   loginResponse: any;
   isSubmitted = false;
@@ -30,7 +28,7 @@ export class LoginComponent {
     }
   
   ngOnInit(): void { }
-
+  
     get f(): { [key: string]: AbstractControl } {
     return this.loginForm.controls;
   }

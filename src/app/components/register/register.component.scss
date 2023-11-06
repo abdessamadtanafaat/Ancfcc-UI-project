@@ -67,7 +67,7 @@
     align-items: center;
     justify-content: center;
     width: 512px; 
-    height: 420px; 
+    height: 560px; 
     overflow: hidden; 
     z-index: 2; 
 }
@@ -144,10 +144,10 @@ header{
     border: none; 
     border-radius: 30px;
     outline: none; 
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5);
     cursor: pointer; 
     transition: .3s ease-in-out;
-    background-color: #007BFF;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .submit:hover{
     background:rgba(255, 255, 255, 0.5);
@@ -173,3 +173,9 @@ header{
 .two label a:hover{
     text-decoration: underline; 
 }
+.invalid-feedback {
+    font-size: 12px;
+    margin-top: 5px; 
+    color: #f00; 
+}
+  

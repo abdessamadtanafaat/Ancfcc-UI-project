@@ -144,13 +144,13 @@ header{
     border: none; 
     border-radius: 30px;
     outline: none; 
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5);
     cursor: pointer; 
     transition: .3s ease-in-out;
-    background-color: #007BFF;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .submit:hover{
-    background:rgba(255, 255, 255, 0.5);
+    background:rgba(255, 255, 255, 0.3);
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
 .two-col{
@@ -174,8 +174,6 @@ header{
     text-decoration: underline; 
 }
 .invalid-feedback {
-    //border-radius: 4px;
-    //padding: 4px; 
     font-size: 12px;
     margin-top: 5px; 
     color: #f00; 

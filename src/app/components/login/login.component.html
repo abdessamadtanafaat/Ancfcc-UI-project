@@ -13,41 +13,24 @@
             </div>
             <div class="nav-button">
                 <button routerLink="/login" class="btn white-btn" id="loginBtn" onclick="login()">Se Connecter</button>
-                <button routerLink="/register" class="btn" id="registrationBtn" onclick="register()">S'inscrire</button>
+                <button routerLink="/register" class="btn white-btn" id="registrationBtn" onclick="register()">S'inscrire</button>
             </div>
         </nav>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
             <div class="form-box">
-                <div class="login-container" id="login">
+                <div class="register-container" id="login">
                     <div class="top">
                         <span>Vous n'avez pas de compte ? <a routerLink="/register" onclick="register()">S'inscrire</a></span>
                         <header>Se Connecter</header>
                     </div>
                     <div class="two-forms">
                         <div class="input-box">
-                            <input type="text" class="input-field" placeholder="username" formControlName="username"
-                              [class.invalid]="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched || isSubmitted)" />
+                            <input type="text" class="input-field" placeholder="username" formControlName="username" >
                             <i class="fa fa-envelope"></i>
                         </div>
-                        <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched || isSubmitted)">
-                          <div class="invalid-feedback">Username is required and must be at least 6 characters long.</div>
-                        </div>
-                        
                         <div class="input-box">
-                            <input type="email" class="input-field" placeholder="Adresse e-mail" id="email" formControlName="email" 
-                            [class.invalid]="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched || isSubmitted)">
-                            <i class="fa fa-envelope"></i>
-                        </div>
-                        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched || isSubmitted)">
-                          <div class="invalid-feedback">Username is required and must be at least 6 characters long.</div>
-                        </div>
-                        <div class="input-box">
-                            <input type="password" class="input-field" placeholder="Mot de Passe" id="password" formControlName="password"
-                             [class.invalid]="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched || isSubmitted)">
+                            <input type="password" class="input-field" placeholder="Mot de Passe" id="password" formControlName="password">
                             <i class="fa fa-unlock-alt"></i>
-                        </div>
-                        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched || isSubmitted)">
-                          <div class="invalid-feedback">Username is required and must be at least 6 characters long.</div>
                         </div>
                         <div class="input-box">
                             <input type="submit" class="submit" value="Se Connecter">
