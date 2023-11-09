@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/services/service.service';
-import { AuthResponseDto, UserForAuthenticationDto } from './user';
+import {UserForAuthenticationDto } from './user';
 
 @Component({
   selector: 'app-login',
@@ -57,7 +57,7 @@ export class LoginComponent {
         },
         (err: Error) => {
           alert('Authentication failed. Please check your credentials.');
-        }
+        } 
 
     ); 
     

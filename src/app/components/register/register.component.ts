@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/services/service.service';
+import { RegistrationResult, UserForRegistrationDto } from '../login/user';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -29,7 +31,12 @@ export class RegisterComponent {
         { 
             username: ['', [Validators.required,Validators.minLength(6), Validators.maxLength(40)]],
             email: ['', [Validators.required, Validators.email]],
-            password:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40)]]
+            password:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40)]],
+            nom:['', [Validators.required]],
+            prenom:['', [Validators.required]],
+            role:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40)]],
+            checkpassword:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40)]],
+
           });
          
        
@@ -41,8 +48,34 @@ export class RegisterComponent {
     return this.registerForm.controls;
   }
  
-  onSubmitRegister(){
+  onSubmitRegister(){ 
+     console.log(this.registerForm.value, this.registerForm.invalid); 
+     const userForRegistrationDto: UserForRegistrationDto = this.registerForm.value;
+     this.authService.register(userForRegistrationDto).subscribe(
+      (response: RegistrationResult)=> {
+        console.log(response.ErrorRegistration, response.SuccessRegistration);
+        if(response){
 
+          alert ('success registration check email'); 
+          this.router.navigate(['admin']); 
+
+        } 
+        console.log(response); 
+
+      },
+     (err:HttpErrorResponse)=>{
+       console.log(err.message)
+      alert('error registration');
+     }
+
+
+
+
+
+     ); 
+
+     
+ 
 
   }
 

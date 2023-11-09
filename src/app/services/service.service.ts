@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt'
+import { RegistrationResult } from '../components/login/user';
 
 
 @Injectable({
@@ -21,6 +22,11 @@ export class ServiceService {
     return this.http.post(this.baseUrl +'login', values, { responseType: 'text' });
   }
 
+  register(values: any): Observable<RegistrationResult>{
+    console.log(values)
+    return this.http.post<RegistrationResult>(this.baseUrl +'register', values);
+
+  }
 
   isTokenValid(): boolean {
     const token = localStorage.getItem('token');
