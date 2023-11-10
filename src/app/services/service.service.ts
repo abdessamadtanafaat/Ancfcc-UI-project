@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt'
-import { RegistrationResult } from '../components/login/user';
+import { RegistrationResult, UserForRegistrationDto } from '../components/login/user';
 
 
 @Injectable({
@@ -22,10 +22,9 @@ export class ServiceService {
     return this.http.post(this.baseUrl +'login', values, { responseType: 'text' });
   }
 
-  register(values: any): Observable<RegistrationResult>{
-    console.log(values)
-    return this.http.post<RegistrationResult>(this.baseUrl +'register', values);
-
+  register(userForRegistrationDto: UserForRegistrationDto): Observable<RegistrationResult>{
+    // console.log(userForRegistrationDto)
+    return this.http.post<any>(this.baseUrl +'register', userForRegistrationDto)
   }
 
   isTokenValid(): boolean {
