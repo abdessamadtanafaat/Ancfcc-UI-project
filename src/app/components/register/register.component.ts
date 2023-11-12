@@ -17,9 +17,6 @@ export class RegisterComponent {
   IsSuccessful = false;
   
   
-
-
-  
   constructor(
     private fb: FormBuilder, 
     private authService: ServiceService, 
@@ -63,6 +60,16 @@ export class RegisterComponent {
   }
  
   onSubmitRegister(){ 
+    
+    this.isSubmitted = true; 
+    Object.values(this.registerForm.controls).forEach(control => {
+      control.markAllAsTouched();
+    }); 
+
+    // if the request is not valid don't send the request 
+    if (!this.registerForm.valid){
+      return; 
+    }
      console.log(this.registerForm.value, this.registerForm.invalid); 
 
      const userForRegistrationDto: UserForRegistrationDto = this.registerForm.value;
@@ -92,23 +99,8 @@ export class RegisterComponent {
         // Access the error message from the API in the response body
         alert('Bad Request: ' + err.error.message);
       }
-
      }
-
-
-
-
-
      ); 
-
-     
- 
-
   }
-
-
-
-
- 
 
 }

@@ -25,11 +25,13 @@
                     </div>
                     <div class="two-forms">
                         <div class="input-box">
-                            <input type="text" class="input-field" placeholder="username" formControlName="username" >
-                            <i class="fa fa-envelope"></i>
+                            <input type="text" class="input-field" placeholder="Nom d'utilisateur" formControlName="username" 
+                            [ngClass]="{'invalid-input-field': loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched || isSubmitted)}">
+                            <i class="fas fa-at"></i>
                         </div>
                         <div class="input-box">
-                            <input type="password" class="input-field" placeholder="Mot de Passe" id="password" formControlName="password">
+                            <input type="password" class="input-field" placeholder="Mot de Passe" id="password" formControlName="password"
+                            [ngClass]="{'invalid-input-field': loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched || isSubmitted)}">
                             <i class="fa fa-unlock-alt"></i>
                         </div>
                         <div class="input-box">

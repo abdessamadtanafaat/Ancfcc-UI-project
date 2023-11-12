@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt'
-import { RegistrationResult, UserForRegistrationDto } from '../components/login/user';
+import { ForgetPaaswordDto, RegistrationResult, UserForRegistrationDto } from '../components/login/user';
 
 
 @Injectable({
@@ -27,6 +27,12 @@ export class ServiceService {
     return this.http.post<any>(this.baseUrl +'register', userForRegistrationDto)
   }
 
+  resetPassword(userForRegistrationDto: ForgetPaaswordDto): Observable<any>{
+    console.log(userForRegistrationDto)
+    return this.http.post(this.baseUrl +'forgot-password', userForRegistrationDto, {responseType: 'text'}); 
+  } 
+
+  
   isTokenValid(): boolean {
     const token = localStorage.getItem('token');
     return !!token; // Return true if a token exists

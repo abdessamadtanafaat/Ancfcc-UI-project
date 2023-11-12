@@ -21,9 +21,9 @@ export class LoginComponent {
 
       this.loginForm = this.fb.group(
         {
-          username: ['', [Validators.required,Validators.minLength(6), Validators.maxLength(40)]],
-          email: ['', [Validators.required, Validators.email]],
-          password:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40)]]
+          username: ['', [Validators.required]],
+          // email: ['', [Validators.required, Validators.email]],
+          password:['', [Validators.required]]
         });
     }
   
@@ -35,6 +35,17 @@ export class LoginComponent {
 
 
   onSubmitLogin() {
+    this.isSubmitted = true; 
+    console.log(this.isSubmitted);
+    Object.values(this.loginForm.controls).forEach((control) => {
+       control.markAsTouched();
+    }); 
+
+    // if the logi form is not valid don't send the request .  
+    if(!this.loginForm.valid){
+      return;
+    }
+    
     console.log(this.loginForm.value, this.loginForm.invalid); 
     const  UserForAuthenticationDto: UserForAuthenticationDto = this.loginForm.value;
     this.authService.login(UserForAuthenticationDto).subscribe(

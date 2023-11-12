@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { authGuard } from './guards/auth.guard';
 import { ServiceService } from './services/service.service';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 export function tokenGetter(){
@@ -24,6 +25,7 @@ export function tokenGetter(){
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

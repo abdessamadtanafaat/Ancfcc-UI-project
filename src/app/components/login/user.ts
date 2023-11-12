@@ -18,4 +18,8 @@ export interface UserForRegistrationDto {
     role: string;
     checkpassword: string;
 }
+export interface ForgetPaaswordDto {
+    
+     email: string; 
+}
 

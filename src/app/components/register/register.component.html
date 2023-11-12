@@ -52,16 +52,16 @@
 
       </div>
       <div class="input-box">
-        <input type="text" class="input-field" placeholder="username" formControlName="username"
+        <input type="text" class="input-field" placeholder="Nom d'utilisateur" formControlName="username"
         [ngClass]="{'invalid-input-field': registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched || isSubmitted)}">
-        <i class="fa fa-envelope"></i>
-    </div>
+        <i class="fas fa-at"></i>
+      </div>
     <!-- <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched || isSubmitted)">
       <div class="invalid-feedback">Username is required</div>
     </div> -->
 
       <div class="input-box">
-        <input type="email" class="input-field" placeholder="Adresse e-mail" formControlName="email"
+        <input type="email" class="input-field" placeholder="E-mail" formControlName="email"
         [ngClass]="{'invalid-input-field': registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched || isSubmitted)}">
         <i class="fa fa-envelope"></i>
       </div>
@@ -84,7 +84,7 @@
         <div class="invalid-feedback">Username is required and must be at least 6 characters long.</div>
       </div> -->
       <div class="input-box">
-        <input type="password" class="input-field" placeholder=" répéte le Mot de Passe" formControlName="checkPassword"
+        <input type="password" class="input-field" placeholder=" Confirmer Vore Mot de Passe" formControlName="checkPassword"
         [ngClass]="{'invalid-input-field': registerForm.get('checkPassword')?.invalid && (registerForm.get('checkPassword')?.dirty || registerForm.get('checkPassword')?.touched || isSubmitted)}">
         <i class="fa fa-unlock-alt"></i>
       </div>
@@ -94,13 +94,18 @@
       </div>
 
       <div class="input-box">
-        <input type="text" class="input-field" placeholder="Role" formControlName="role"
-        [ngClass]="{'invalid-input-field': registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched || isSubmitted)}">
-        <i class="fa fa-unlock-alt"></i>
+        <select class="input-field" formControlName="role"
+          [ngClass]="{'invalid-input-field': registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched || isSubmitted)}">
+          <option value="" disabled selected>Select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="Agent">Agent</option>
+        </select>
+        <i class="fas fa-user-cog"></i>
       </div>
-      <div *ngIf="registerForm.hasError('roleNotSet')">
-        <div class="invalid-feedback">Choose Admin or agent. </div> 
-       </div>
+      <div *ngIf="registerForm.get('role')?.hasError('roleNotSet')">
+        <div class="invalid-feedback">Choose Admin or Agent.</div>
+      </div>
+      
       <div class="input-box">
         <input type="submit" class="submit" value="S'inscrire">
       </div>
