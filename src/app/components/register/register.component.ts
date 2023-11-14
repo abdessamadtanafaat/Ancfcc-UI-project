@@ -5,6 +5,8 @@ import { ServiceService } from 'src/app/services/service.service';
 import { RegistrationResult, UserForRegistrationDto } from '../login/user';
 import { HttpErrorResponse } from '@angular/common/http';
 import { matchPasswordValidator,passwordStrongEnough, twoRoles } from './custom-validators';
+import { MatDialog } from '@angular/material/dialog';
+import { VerificationDialogComponent } from 'src/app/modules/admin/components/verification-dialog/verification-dialog.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -20,23 +22,10 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder, 
     private authService: ServiceService, 
-    private router: Router) {
+    private router: Router,
+    private dialog: MatDialog) {
 
-
-
-      // this.registerForm = this.fb.group(
-      //   { 
-      //       username: ['', [Validators.required,Validators.minLength(6), Validators.maxLength(40)]],
-      //       email: ['', [Validators.required, Validators.email]],
-      //       password:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40)]],
-      //       nom:['', [Validators.required]],
-      //       prenom:['', [Validators.required]],
-      //       role:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40)]],
-      //       checkpassword:['', [Validators.required, Validators.minLength(6),Validators.maxLength(40),]],
-
-      //     });
       this.registerForm = this.fb.group({
-        // Other form controls...
       
         password: ['', [Validators.required, Validators.minLength(6)]],
         checkPassword: ['', [Validators.required]],
@@ -57,6 +46,12 @@ export class RegisterComponent {
 
     get f(): { [key: string]: AbstractControl } {
     return this.registerForm.controls;
+  }
+  openVerificationDialog(): void {
+    const dialogRef = this.dialog.open(VerificationDialogComponent,
+      {
+        width: '30px',
+      });
   }
  
   onSubmitRegister(){ 

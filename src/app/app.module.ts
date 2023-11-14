@@ -14,6 +14,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { authGuard } from './guards/auth.guard';
 import { ServiceService } from './services/service.service';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerificationDialogComponent } from './modules/admin/components/verification-dialog/verification-dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 
 export function tokenGetter(){
@@ -26,6 +28,7 @@ export function tokenGetter(){
     RegisterComponent,
     NotFoundComponent,
     ForgotPasswordComponent,
+    VerificationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ export function tokenGetter(){
     MatListModule, 
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatDialogRef,
     JwtModule.forRoot({
       config:{
         tokenGetter: tokenGetter, 

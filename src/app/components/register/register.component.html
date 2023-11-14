@@ -36,9 +36,6 @@
           <i class="fa fa-user"></i>
         </div>
 
-        <!-- <div *ngIf="registerForm.get('nom')?.invalid && (registerForm.get('nom')?.dirty || registerForm.get('nom')?.touched || isSubmitted)">
-          <div class="invalid-feedback">Prenom is required</div>
-        </div> -->
 
         <div class="input-box">
           <input type="text" class="input-field" placeholder="Prénom" formControlName="prenom"
@@ -46,9 +43,7 @@
           <i class="fa fa-user"></i>
         </div>
 
-        <!-- <div *ngIf="registerForm.get('prenom')?.invalid && (registerForm.get('prenom')?.dirty || registerForm.get('prenom')?.touched || isSubmitted)">
-          <div class="invalid-feedback">Prenom is required</div>
-        </div> -->
+
 
       </div>
       <div class="input-box">
@@ -56,18 +51,14 @@
         [ngClass]="{'invalid-input-field': registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched || isSubmitted)}">
         <i class="fas fa-at"></i>
       </div>
-    <!-- <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched || isSubmitted)">
-      <div class="invalid-feedback">Username is required</div>
-    </div> -->
+
 
       <div class="input-box">
         <input type="email" class="input-field" placeholder="E-mail" formControlName="email"
         [ngClass]="{'invalid-input-field': registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched || isSubmitted)}">
         <i class="fa fa-envelope"></i>
       </div>
-      <!-- <div *ngIf="registerForm.get('email')?.hasError('required')">
-        <div class="invalid-feedback">Email is required.</div>
-      </div> -->
+
       <div *ngIf="registerForm.get('email')?.hasError('email')">
         <div class="invalid-feedback">Email is not valid.</div>
       </div>
@@ -77,12 +68,11 @@
         <i class="fa fa-unlock-alt"></i>
       </div>
 
+      
       <div *ngIf="registerForm.hasError('strongPassword')">
        <div class="invalid-feedback">Password must be strong enough. </div> 
       </div>
-      <!-- <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched || isSubmitted)">
-        <div class="invalid-feedback">Username is required and must be at least 6 characters long.</div>
-      </div> -->
+
       <div class="input-box">
         <input type="password" class="input-field" placeholder=" Confirmer Vore Mot de Passe" formControlName="checkPassword"
         [ngClass]="{'invalid-input-field': registerForm.get('checkPassword')?.invalid && (registerForm.get('checkPassword')?.dirty || registerForm.get('checkPassword')?.touched || isSubmitted)}">
