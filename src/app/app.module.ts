@@ -15,7 +15,10 @@ import { authGuard } from './guards/auth.guard';
 import { ServiceService } from './services/service.service';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerificationDialogComponent } from './modules/admin/components/verification-dialog/verification-dialog.component';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 
 export function tokenGetter(){
@@ -38,7 +41,10 @@ export function tokenGetter(){
     MatListModule, 
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatDialogRef,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
 
     JwtModule.forRoot({
       config:{

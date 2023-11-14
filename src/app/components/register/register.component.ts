@@ -47,11 +47,13 @@ export class RegisterComponent {
     get f(): { [key: string]: AbstractControl } {
     return this.registerForm.controls;
   }
-  openVerificationDialog(): void {
+  openVerificationDialog(): Promise<string> {
     const dialogRef = this.dialog.open(VerificationDialogComponent,
       {
-        width: '30px',
+        width: '300px',
       });
+      const result = dialogRef.afterClosed().toPromise();
+      return result;
   }
  
   onSubmitRegister(){ 

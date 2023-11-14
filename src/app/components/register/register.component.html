@@ -21,7 +21,7 @@
       <!-------------------Form box-------------------------->
       <div class="form-box">
 <!----------registration from--------->
-<form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()" (click)="openVerificationDialog()">
   <div class="register-container" id="register">
     <div class="top">
       <span>Avoir un compte? <a routerLink="/login" onclick="login()">Se Connecter</a></span>
