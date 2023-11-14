@@ -39,6 +39,7 @@ export function tokenGetter(){
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatDialogRef,
+
     JwtModule.forRoot({
       config:{
         tokenGetter: tokenGetter, 
